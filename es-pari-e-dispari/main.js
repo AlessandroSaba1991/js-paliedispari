@@ -22,7 +22,7 @@ function numero_random(min, max) {
  * @param {number} numero -Inserisci un numero
  * @returns {string} |'pari'| o |'dispari'|
  */
-function pari_dispari(numero) {
+function pari_dispari_string(numero) {
     if (numero % 2 === 0) {
         return 'pari';
     } else {
@@ -30,6 +30,21 @@ function pari_dispari(numero) {
     }
 }
 
+/**
+ * ### Definisce se un numero è pari o dispari
+ * @param {number} numero -Inserisci un numero
+ * @returns {boolean}  True o False
+ */
+function pari_dispari_boolean(numero) {
+    if (numero % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+/* //Esercizio con la funzione pari_dispari_string
 let somma = 0;
 
 const scelta_utente = prompt('Scegli pari o dispari');
@@ -39,8 +54,34 @@ const numero_pc = numero_random(1, 5);
 somma = numero_utente + numero_pc;
 console.log('la tua scelta è', scelta_utente, 'Il tuo numero ', numero_utente, 'Numero pc ', numero_pc, 'la somma è ', somma);
 
-if (pari_dispari(somma) === scelta_utente) {
+if (pari_dispari_string(somma) === scelta_utente) {
     console.log('Hai vinto');
 } else {
     console.log('Hai perso');
+} */
+
+
+//Esercizio con funzione pari_dispari_boolean
+let somma = 0;
+let risultato;
+
+const scelta_utente = prompt('Scegli pari o dispari');
+const numero_utente = parseInt(prompt('Inserisci un numero da 1 a 5'));
+const numero_pc = numero_random(1, 5);
+
+somma = numero_utente + numero_pc;
+
+if (pari_dispari_boolean(somma)) {
+    risultato = 'pari';
+} else {
+    risultato = 'dispari';
+}
+
+console.log('la tua scelta è', scelta_utente, 'Il tuo numero', numero_utente, 'Numero pc', numero_pc, 'la somma è', somma, 'Il risultato è', risultato);
+
+
+if (risultato === scelta_utente) {
+    console.log('hai vinto');
+} else {
+    console.log('hai perso');
 }
